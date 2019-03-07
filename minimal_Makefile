@@ -1,0 +1,20 @@
+CC=gcc
+CFLAGS=-g -Wall
+OBJS=sh143a.o cmd.o
+TARGET=shell.out
+
+all: $(TARGET)
+
+$(TARGET): $(OBJS)
+	$(CC) -o $@ $(OBJS)
+
+shell.o: shell.c
+#	$(CC) -c shell.c
+
+cmd.o: cmd.c cmd.h
+#	$(CC) -c cmd.c
+
+clean:
+	rm -f *.o
+	rm -f *.gch
+	rm -f $(TARGET)
